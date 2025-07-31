@@ -2,6 +2,7 @@ import { InputControl, InputPrefix, InputRoot } from "@/components/Input";
 import { SettingsTabs } from "@/components/SettingsTabs";
 import {Mail} from "lucide-react";
 import * as FileInput from '@/components/Form/FileInput'
+import { Select } from "@/components/Form/Select";
 
 export default function Home() {
   return (
@@ -65,12 +66,12 @@ export default function Home() {
 
           <div className="grid grid-cols-form gap-3 py-5">
             <label htmlFor="country" className="text-sm font-medium text-zinc-700">Country</label>
-            <div></div>
+            <Select/>
           </div>
 
            <div className="grid grid-cols-form gap-3 py-5">
             <label htmlFor="timezone" className="text-sm font-medium text-zinc-700">Timezone</label>
-            <div></div>
+            
           </div>
 
           <div className="grid grid-cols-form gap-3 py-5">
