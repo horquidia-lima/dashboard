@@ -1,13 +1,19 @@
 'use client'
 
-import {ChevronDown, Check} from "lucide-react"
+import {ChevronDown} from "lucide-react"
 import * as SelectPrimitive from '@radix-ui/react-select'
+import { ReactNode } from "react"
 
-export function Select(){
+export interface SelectProps {
+    children: ReactNode
+    placeholder: string
+}
+
+export function Select({children, placeholder}: SelectProps){
     return(
          <SelectPrimitive.Root>
             <SelectPrimitive.Trigger className="flex h-full items-center justify-between gap-2 rounded-lg border border-zinc-300 px-3 py-2 shadow-sm data-[placeholder]:text-zinc-600">
-                <SelectPrimitive.Value placeholder="select a country..." className="text-black"/>
+                <SelectPrimitive.Value placeholder={placeholder} className="text-black"/>
                 <SelectPrimitive.Icon>
                   <ChevronDown className="h-5 w-5 text-zinc-500"/>
                 </SelectPrimitive.Icon>
@@ -16,14 +22,7 @@ export function Select(){
             <SelectPrimitive.Portal>
                 <SelectPrimitive.Content side="bottom" position="popper" sideOffset={8} className="z-10 rounded-lg border border-zinc-200 bg-white w-[--radix-select-trigger-width] overflow-hidden">
                     <SelectPrimitive.Viewport>
-                        <SelectPrimitive.Item value="br" className="flex items-center justify-between gap-2 px-3 py-2.5 outline-none data-[highlighted]:bg-zinc-50">
-                            <SelectPrimitive.ItemText className="text-black">
-                                Brasil
-                            </SelectPrimitive.ItemText>
-                            <SelectPrimitive.ItemIndicator>
-                                <Check className="h-4 w-4 text-violet-500"/>
-                            </SelectPrimitive.ItemIndicator>
-                        </SelectPrimitive.Item>
+                        {children}
                     </SelectPrimitive.Viewport>
                 </SelectPrimitive.Content>
             </SelectPrimitive.Portal>
