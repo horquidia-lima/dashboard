@@ -20,7 +20,12 @@ export function Select({children, placeholder, ...props}: SelectProps){
             </SelectPrimitive.Trigger>
 
             <SelectPrimitive.Portal>
-                <SelectPrimitive.Content side="bottom" position="popper" sideOffset={8} className="z-10 shadow-sm rounded-lg border border-zinc-200 bg-white w-[--radix-select-trigger-width] overflow-hidden">
+                <SelectPrimitive.Content 
+                    side="bottom" 
+                    position="popper" 
+                    sideOffset={8} 
+                    className="z-10 shadow-sm rounded-lg border border-zinc-200 bg-white w-[--radix-select-trigger-width] overflow-hidden animate-slideDownAndFade"
+                >
                     <SelectPrimitive.Viewport>
                         {children}
                     </SelectPrimitive.Viewport>
